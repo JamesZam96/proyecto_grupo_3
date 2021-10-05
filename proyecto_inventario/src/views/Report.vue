@@ -7,7 +7,7 @@
         <!-- navLateral -->
         <app-navlateral></app-navlateral>
         <!-- pageContent -->
-        <section class="full-width pageContent">
+        <section class="full-width pageContent" style="height: 1700px">
             <!-- ESTADÍSTICAS E INFORME DE INVENTARIO -->
             <section class="full-width text-center" style="padding: 40px 0;">
                 <h3 class="text-center tittles">ESTADÍSTICAS E INFORME DE INVENTARIO</h3>
@@ -16,7 +16,7 @@
             <section class="full-width text-center" style="padding: 10px 0;">
                 <h4 class="text-center tittles">Valoración del inventario actual</h4>
                 <!-- Tiles -->
-                <article class="full-width tile">
+                <article class="full-width tile" style="margin: 10px;">
                     <div class="tile-text">
                         <span class="text-condensedLight">
                             <!-- 2<br> -->
@@ -26,7 +26,7 @@
                     </div>
                     <i class="zmdi zmdi-account tile-icon"></i>
                 </article>
-                <article class="full-width tile">
+                <article class="full-width tile" style="margin: 10px;">
                     <div class="tile-text">
                         <span class="text-condensedLight">
                             <!-- 71<br> -->
@@ -36,7 +36,7 @@
                     </div>
                     <i class="zmdi zmdi-accounts tile-icon"></i>
                 </article>
-                <article class="full-width tile">
+                <article class="full-width tile" style="margin: 10px;">
                     <div class="tile-text">
                         <span class="text-condensedLight">
                             <!-- 7<br> -->
@@ -60,90 +60,30 @@
                         <!-- Pie Chart -->
                         <div class="col col-lg-6"><GoogleChart /></div>
                         <!-- Table product information -->
-                        <div class="col align-self-center">               
-                            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" style="text-align: center">Producto 1</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Total vendido</td>
-                                        <td>235 unidades</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total ganancia</td>
-                                        <td>$157.890</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Volumen de venta</td>
-                                        <td>70%</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
+                        <div class="col align-self-center"><TableTurnover /></div>
                     </div>
                 </div>
             </section>
             <!-- Alarmas de inventario: cantidad mínima y fechas de vencimiento -->
             <section class="full-width text-center" style="padding: 5px 0;">
                 <h4 class="text-center tittles">Alarmas de inventario: cantidad mínima y fechas de vencimiento</h4>
-                <div class="container">
+                <div class="container" style="margin: 20px 0;">
                     <div class="row">
                         <!-- Tabla: Productos con cantidad mínima-->
-                        <div class="col align-self-center">
-                            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" style="text-align: center">Producto 1</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Total vendido</td>
-                                        <td>235 unidades</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total ganancia</td>
-                                        <td>$157.890</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Volumen de venta</td>
-                                        <td>70%</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
+                        <div class="col d-flex justify-content-center">
+                            <TableMinQuantity />
                         </div>
                         <!-- Tabla: Productos próximos a vencer-->
-                        <div class="col">
-                            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" style="text-align: center">Producto 1</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Total vendido</td>
-                                        <td>235 unidades</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total ganancia</td>
-                                        <td>$157.890</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Volumen de venta</td>
-                                        <td>70%</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
+                        <div class="col d-flex justify-content-center">
+                            <TableDueDate />
                         </div>
                     </div>
                 </div>
+            </section>
+            <!-- Inventario disponible -->
+            <section class="full-width text-center" style="padding: 50px 80px;">
+                <h4 class="text-center tittles">Inventatio disponible</h4>
+                <div><TableInventory /></div>
             </section>
 
 
@@ -156,11 +96,16 @@ import AppNotification from '@/components/AppNotification.vue';
 import AppNavbar from '@/components/AppNavbar.vue';
 import AppNavlateral from '@/components/AppNavlateral.vue';
 import GoogleChart from '../components/GoogleChart.vue'
+import TableInventory from '../components/TableInventory.vue'
+import TableTurnover from '../components/TableTurnover.vue'
+import TableMinQuantity from '../components/TableMinQuantity.vue'
+import TableDueDate from '../components/TableDueDate.vue'
 
 export default{
     name: 'inventory',
     components: {
-        AppNotification,AppNavbar,AppNavlateral,GoogleChart
+        AppNotification,AppNavbar,AppNavlateral,GoogleChart,TableInventory,
+        TableTurnover, TableMinQuantity, TableDueDate
     }
 }
 </script>

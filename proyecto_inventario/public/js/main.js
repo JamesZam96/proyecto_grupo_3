@@ -38,7 +38,8 @@ $(document).ready(function(){
 		},
 		function(isConfirm) {
 		  	if (isConfirm) {
-		    	window.location='index.html'; 
+				localStorage.removeItem('token')
+		    	window.location='/'; 
 		  	}
 		});
     });

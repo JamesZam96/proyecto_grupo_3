@@ -11,7 +11,8 @@ import RegisterProvider from '@/views/RegisterProvider'
 
 Vue.use(Router);
 
-export default new Router({
+// export default new Router({
+const router = new Router({
     mode: 'history',
     routes:[
         {
@@ -22,37 +23,88 @@ export default new Router({
         {
             path: '/',
             name: 'Login',
-            component: Login
+            component: Login,
+            meta:{
+                isAuth: true
+            }
         },
         {
             path: '/registeruser',
             name: 'RegisterUser',
-            component: RegisterUser
+            component: RegisterUser,
+            meta:{
+                isAuth: true
+            }
         },
         {
             path: '/createuser',
             name: 'CreateUser',
-            component: CreateUser
+            component: CreateUser,
+            meta:{
+                requiresAuth: true
+            }
         },
         {
             path: '/home',
             name: 'Home',
-            component: Home
+            component: Home,
+            meta:{
+                requiresAuth: true
+            }
         },
         {
             path: '/registerclient',
             name: 'RegisterClient',
-            component: RegisterClient
+            component: RegisterClient,
+            meta:{
+                requiresAuth: true
+            }
         },
         {
             path: '/registerproduct',
             name: 'RegisterProduct',
-            component: RegisterProduct
+            component: RegisterProduct,
+            meta:{
+                requiresAuth: true
+            }
         },
         {
             path: '/registerprovider',
             name: 'RegisterProvider',
-            component: RegisterProvider
+            component: RegisterProvider,
+            meta:{
+                requiresAuth: true
+            }
         }
     ]
 });
+
+router.beforeEach((to,from,next)=>{
+    if (to.meta.requiresAuth){
+        console.log(from)
+        if (!localStorage.getItem('token')){
+            next({
+                name: 'Login'
+            })
+        }else{
+            next()
+        }
+    }else{
+        next()
+    }
+
+    if (to.meta.isAuth){
+        // console.log(from)
+        if (localStorage.getItem('token')){
+            next({
+                name: 'Home'
+            })
+        }else{
+            next()
+        }
+    }else{
+        next()
+    }
+})
+
+export default router

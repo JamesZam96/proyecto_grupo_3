@@ -1,4 +1,5 @@
 const url = 'https://randomuser.me/api/';
+const url1 = 'https://proyecto-express-james.herokuapp.com/registerclient'
 
 function getUsersPromise(){
     return fetch(url+'?results=50')
@@ -12,6 +13,16 @@ const getUsersAsync = async ()=>{
         const res = await fetch(url+'?results=50');
         const data = await res.json();
         return data.results;    
+    }catch(err){
+        console.log(err)
+    }
+}
+
+const getClientsAsync = async ()=>{
+    try{
+        const resClient = await fetch(url1)
+        const dataClient = await resClient.json();
+        return dataClient;    
     }catch(err){
         console.log(err)
     }
@@ -31,5 +42,6 @@ const getUsersData = async (id)=>{
 export default{
     getUsersPromise,
     getUsersAsync,
-    getUsersData
+    getUsersData,
+    getClientsAsync
 }

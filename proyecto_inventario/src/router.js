@@ -9,6 +9,8 @@ import RegisterClient from '@/views/RegisterClient'
 import RegisterProduct from '@/views/RegisterProduct'
 import RegisterProvider from '@/views/RegisterProvider'
 
+import getPrueba from '@/views/getPrueba'
+
 Vue.use(Router);
 
 // export default new Router({
@@ -72,6 +74,14 @@ const router = new Router({
             path: '/registerprovider',
             name: 'RegisterProvider',
             component: RegisterProvider,
+            meta:{
+                requiresAuth: true
+            }
+        },
+        {
+            path: '/getprueba',
+            name: 'GetPrueba',
+            component: getPrueba,
             meta:{
                 requiresAuth: true
             }

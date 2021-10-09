@@ -29,7 +29,8 @@
 				<label class="mdl-textfield__label" for="pass">Contraseña</label>
 			</div>
 			<!-- <i class="zmdi zmdi-mail-send"></i> -->
-			<input type="button" @click="register" id="Register" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;" value="Registrar"/>
+				<input type="button" @click="register" id="Register" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;" value="Registrar"/>
+				<!-- <i class="zmdi zmdi-mail-send" style="float:right"></i> -->
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<p><a href="/login">¿Ya tienes una cuenta?</a></p>
 			</div>

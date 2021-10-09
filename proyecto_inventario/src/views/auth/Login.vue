@@ -16,7 +16,7 @@
 				<label class="mdl-textfield__label" for="pass">Contraseña</label>
 			</div>
 			<input @click="login" id="SingIn" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;" value="Iniciar sesión">
-			
+			<!-- <i class="zmdi zmdi-mail-send" ></i> -->
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<p><a href="/registeruser">Registrar cuenta</a></p>
 			</div>

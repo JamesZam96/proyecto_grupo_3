@@ -30,44 +30,42 @@
 								<form>
 									<h5 class="text-condensedLight">DATOS DEL CLIENTE</h5>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient">
+										<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient" v-model="form.dniClient">
 										<label class="mdl-textfield__label" for="DNIClient">Identificación</label>
 										<span class="mdl-textfield__error">Invalid number</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameClient">
+										<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameClient" v-model="form.nameClient">
 										<label class="mdl-textfield__label" for="NameClient">Nombres</label>
 										<span class="mdl-textfield__error">Invalid name</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameClient">
+										<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameClient" v-model="form.lastNameClient">
 										<label class="mdl-textfield__label" for="LastNameClient">Apellidos</label>
 										<span class="mdl-textfield__error">Invalid last name</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" id="addressClient1">
-										<label class="mdl-textfield__label" for="addressClient1">Dirección 1</label>
+										<input class="mdl-textfield__input" type="text" id="address1Client" v-model="form.address1Client">
+										<label class="mdl-textfield__label" for="address1Client">Dirección 1</label>
 										<span class="mdl-textfield__error">Invalid address</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" id="addressClient2">
-										<label class="mdl-textfield__label" for="addressClient2">Dirección 2</label>
+										<input class="mdl-textfield__input" type="text" id="address2Client" v-model="form.address2Client">
+										<label class="mdl-textfield__label" for="address2Client">Dirección 2</label>
 										<span class="mdl-textfield__error">Invalid address</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient">
+										<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient" v-model="form.phoneClient">
 										<label class="mdl-textfield__label" for="phoneClient">Teléfono</label>
 										<span class="mdl-textfield__error">Invalid phone number</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="email" id="emailClient">
+										<input class="mdl-textfield__input" type="email" id="emailClient" v-model="form.emailClient">
 										<label class="mdl-textfield__label" for="emailClient">Email</label>
 										<span class="mdl-textfield__error">Invalid E-mail</span>
 									</div>
 									<p class="text-center">
-										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient">
-											<i class="zmdi zmdi-plus"></i>
-										</button>
+										<input @click="registerClient" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient" value="+">
 										<div class="mdl-tooltip" for="btn-addClient">Add client</div>
 									<!-- </p> -->
 								</form>
@@ -175,14 +173,54 @@
 import NavLateral from '@/components/NavLateral.vue'
 import NavBar from '@/components/NavBar.vue'
 import NotificationArea from '@/components/NotificationArea.vue'
+import axios from 'axios'
+// import api from '@/api'
 
 export default {
-    name: 'registerclient',
+    // name: 'registerclient',
     components:{
         NavLateral,
         NavBar,
         NotificationArea
-    }
+    },
+	data(){
+		return{
+			clients:[],
+			form:{
+				dniClient:'',
+				nameClient:'',
+				lastNameClient:'',
+				address1Client:'',
+				address2Client:'',
+				phoneClient:'',
+				emailClient:''
+			}
+		}
+	},
+	methods:{
+		registerClient(){
+            let formDataClient = new URLSearchParams
+			formDataClient.append('dniClient', this.form.dniClient)
+			formDataClient.append('nameClient', this.form.nameClient)
+			formDataClient.append('lastNameClient', this.form.lastNameClient)
+			formDataClient.append('address1Client', this.form.address1Client)
+			formDataClient.append('address2Client', this.form.address2Client)
+			formDataClient.append('phoneClient', this.form.phoneClient)
+			formDataClient.append('emailClient', this.form.emailClient)
+            
+            console.log(formDataClient)
+            axios.post('https://proyecto-express-james.herokuapp.com/registerclient', formDataClient)
+            .then((response)=>{
+                if (response.status == 200){
+                    console.log(response.data)
+                    this.$router.push('/home')
+                }
+            })
+        },
+		showClient(){
+
+		}
+	}
 }
 </script>
 

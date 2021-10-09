@@ -1,33 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const authService = require('../services/auth.service')
-const Product = require('../models/product'); 
 const User = require('../models/user');
-const Auth = require('../middlewares/authentication')
+const Client = require('../models/client')
 
-//routes
-router.get('/', Auth, async (req,res)=>{
-    // res.send('Hola mundo');
-    const products = await Product.find();
-    res.send(products);
-});
-
-router.post('/',async (req,res)=>{
-    res.send(new Product(req.body));
-    // res.send(req.body);
-    // res.send('Post request');
-    const product = new Product(req.body);
-    await product.save();
-    res.send(product);
-});
-
-router.get('/:id', async (req,res)=>{
-    const product = await Product.findById(req.params.id);
-    res.send(product);
-});
-
-// Auth routes
+// Register User
 router.post('/register', async (req,res)=>{
     try {
         const user = new User(req.body)
@@ -38,6 +15,7 @@ router.post('/register', async (req,res)=>{
     }
 })
 
+// Login User
 router.post('/login', async (req,res)=>{
     try {
         const {email, password} = req.body
@@ -54,5 +32,19 @@ router.post('/login', async (req,res)=>{
         res.send(error)
     }
 })
+
+// Register Client
+router.post('/registerclient', async (req,res)=>{
+    const clientData = new Client(req.body)
+    await clientData.save()
+    res.send(clientData)
+})
+
+// Show Registered Clients
+router.get('/registerclient', async (req,res)=>{
+        const client = await Client.find();
+        res.send(client)
+})
+
 
 module.exports = router;

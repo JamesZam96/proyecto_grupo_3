@@ -1,8 +1,9 @@
 <template>
     <div>
+		<nav-bar></nav-bar>
+		<notification-area></notification-area>
         <nav-lateral></nav-lateral>
-        <nav-bar></nav-bar>
-        <notification-area></notification-area>
+        <!-- <notification-area></notification-area> -->
 
         <section class="full-width pageContent">
 		<section class="full-width text-center" style="padding: 40px 0;">

@@ -12,8 +12,8 @@
 				</div>
 				<figcaption class="navLateral-body-cr hide-on-tablet">
 					<span>
-						Full Name Admin<br>
-						<small>Admin</small>
+						Nombre del Administrador<br>
+						<small>Administrador</small>
 					</span>
 				</figcaption>
 			</figure>
@@ -33,6 +33,17 @@
 						</a>
 					</li>
 					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+					<a class="full-width btn-subMenu">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-view-dashboard"></i>
+							</div>
+							<div class="navLateral-body-cr hide-on-tablet">
+								ADMINISTRACIÓN
+							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
+						</a>
+				<ul class="full-width menu-principal sub-menu-options">
 					<li class="full-width">
 						<a href="/createuser" class="full-width">
 							<div class="navLateral-body-cl">
@@ -58,23 +69,49 @@
 					<li class="full-width">
 						<a href="/registerprovider" class="full-width">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-washing-machine"></i>
+								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
 								CREAR PROVEEDOR
 							</div>
 						</a>
 					</li>
+				</ul>
+					</li>
 					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+					<a class="full-width btn-subMenu">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-view-dashboard"></i>
+							</div>
+							<div class="navLateral-body-cr hide-on-tablet">
+								PRODUCTO
+							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
+						</a>
+				<ul class="full-width menu-principal sub-menu-options">
 					<li class="full-width">
 						<a href="/registerproduct" class="full-width">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-shopping-cart"></i>
+								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>
 							<div class="navLateral-body-cr hide-on-tablet">
 								REGISTRAR PRODUCTO
 							</div>
 						</a>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="/categories" class="full-width">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-view-dashboard"></i>
+							</div>
+							<div class="navLateral-body-cr hide-on-tablet">
+								CATEGORÍAS
+							</div>
+						</a>
+					</li>
+				</ul>
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
@@ -100,7 +137,7 @@
 					</li>
                     <li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="home.html" class="full-width">
+						<a href="/inventory" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>

@@ -1,26 +1,8 @@
-const url = 'https://randomuser.me/api/';
-const url1 = 'https://proyecto-express-james.herokuapp.com/registerclient'
-
-function getUsersPromise(){
-    return fetch(url+'?results=50')
-    .then(res=>res.json())
-    .then(res=>res.results)
-    .catch(err=>console.log(err));
-}
-
-const getUsersAsync = async ()=>{
-    try{
-        const res = await fetch(url+'?results=50');
-        const data = await res.json();
-        return data.results;    
-    }catch(err){
-        console.log(err)
-    }
-}
+const url1 = 'https://proyecto-express-james.herokuapp.com'
 
 const getClientsAsync = async ()=>{
     try{
-        const resClient = await fetch(url1)
+        const resClient = await fetch(url1+'/registerclient')
         const dataClient = await resClient.json();
         return dataClient;    
     }catch(err){
@@ -28,20 +10,39 @@ const getClientsAsync = async ()=>{
     }
 }
 
-const getUsersData = async (id)=>{
-    try {
-        const res = await fetch(`${url}?id=${id}`);
-        // const res = await fetch(url+'?id='+id);
-        const data = await res.json();
-        return data.results[0];
-    } catch (error) {
-        console.log(error)
+const getProvidersAsync = async ()=>{
+    try{
+        const resProvider = await fetch(url1+'/registerprovider')
+        const dataProvider = await resProvider.json();
+        return dataProvider;    
+    }catch(err){
+        console.log(err)
+    }
+}
+
+const getCategoriesAsync = async ()=>{
+    try{
+        const resCategory = await fetch(url1+'/registercategory')
+        const dataCategory = await resCategory.json();
+        return dataCategory;    
+    }catch(err){
+        console.log(err)
+    }
+}
+
+const getProductsAsync = async ()=>{
+    try{
+        const resProduct = await fetch(url1+'/registerproduct')
+        const dataProduct = await resProduct.json();
+        return dataProduct;    
+    }catch(err){
+        console.log(err)
     }
 }
 
 export default{
-    getUsersPromise,
-    getUsersAsync,
-    getUsersData,
-    getClientsAsync
+    getClientsAsync,
+    getProvidersAsync,
+    getCategoriesAsync,
+    getProductsAsync
 }

@@ -10,7 +10,7 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+					REGISTRO DE CLIENTES
 				</p>
 			</div>
 		</section>
@@ -32,41 +32,41 @@
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient" v-model="form.dniClient">
 										<label class="mdl-textfield__label" for="DNIClient">Identificación</label>
-										<span class="mdl-textfield__error">Invalid number</span>
+										<span class="mdl-textfield__error">Número inválido</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameClient" v-model="form.nameClient">
 										<label class="mdl-textfield__label" for="NameClient">Nombres</label>
-										<span class="mdl-textfield__error">Invalid name</span>
+										<span class="mdl-textfield__error">Nombres inválidos</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameClient" v-model="form.lastNameClient">
 										<label class="mdl-textfield__label" for="LastNameClient">Apellidos</label>
-										<span class="mdl-textfield__error">Invalid last name</span>
+										<span class="mdl-textfield__error">Apellidos inválidos</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="text" id="address1Client" v-model="form.address1Client">
 										<label class="mdl-textfield__label" for="address1Client">Dirección 1</label>
-										<span class="mdl-textfield__error">Invalid address</span>
+										<span class="mdl-textfield__error">Dirección inválida</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="text" id="address2Client" v-model="form.address2Client">
 										<label class="mdl-textfield__label" for="address2Client">Dirección 2</label>
-										<span class="mdl-textfield__error">Invalid address</span>
+										<span class="mdl-textfield__error">Dirección inválida</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient" v-model="form.phoneClient">
 										<label class="mdl-textfield__label" for="phoneClient">Teléfono</label>
-										<span class="mdl-textfield__error">Invalid phone number</span>
+										<span class="mdl-textfield__error">Número de teléfono inválido</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="email" id="emailClient" v-model="form.emailClient">
 										<label class="mdl-textfield__label" for="emailClient">Email</label>
-										<span class="mdl-textfield__error">Invalid E-mail</span>
+										<span class="mdl-textfield__error">Email inválido</span>
 									</div>
 									<p class="text-center">
 										<input @click="registerClient" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient" value="+">
-										<div class="mdl-tooltip" for="btn-addClient">Add client</div>
+										<div class="mdl-tooltip" for="btn-addClient">Agregar cliente</div>
 									<!-- </p> -->
 								</form>
 							</div>
@@ -93,70 +93,23 @@
 										</div>
 									</div>
 								</form>
+								
 								<div class="mdl-list">
+									<div v-for="client in clients" v-bind:key="client._id">
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>1. Nombre del cliente</span>
-											<span class="mdl-list__item-sub-title">Identificación</span>
+											<span>{{client.nameClient+" "+client.lastNameClient}}</span>
+											<span class="mdl-list__item-sub-title">{{client.dniClient}}</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
+									
 									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>2. Nombre del cliente</span>
-											<span class="mdl-list__item-sub-title">Identificación</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>3. Nombre del cliente</span>
-											<span class="mdl-list__item-sub-title">Identificación</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>4. Nombre del cliente</span>
-											<span class="mdl-list__item-sub-title">Identificación</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>5. Nombre del cliente</span>
-											<span class="mdl-list__item-sub-title">Identificación</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>6. Nombre del cliente</span>
-											<span class="mdl-list__item-sub-title">Identificación</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>7. Nombre del cliente</span>
-											<span class="mdl-list__item-sub-title">Identificación</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
+									
 								</div>
+								
 							</div>
 						</div>
 						
@@ -165,7 +118,6 @@
 			</div>
 		</div>
 	</section>
-       
     </div>
 </template>
 
@@ -174,7 +126,7 @@ import NavLateral from '@/components/NavLateral.vue'
 import NavBar from '@/components/NavBar.vue'
 import NotificationArea from '@/components/NotificationArea.vue'
 import axios from 'axios'
-// import api from '@/api'
+import api from '@/api'
 
 export default {
     // name: 'registerclient',
@@ -216,11 +168,12 @@ export default {
                     this.$router.push('/home')
                 }
             })
-        },
-		showClient(){
-
+        }
+		
+	},
+	created(){
+			(async ()=>{this.clients = await api.getClientsAsync()})()
 		}
-	}
 }
 </script>
 

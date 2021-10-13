@@ -11,7 +11,7 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+					REGISTRO DE USUARIOS
 				</p>
 			</div>
 		</section>
@@ -37,32 +37,32 @@
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIAdmin">
 												<label class="mdl-textfield__label" for="DNIAdmin">Identificación</label>
-												<span class="mdl-textfield__error">Invalid number</span>
+												<span class="mdl-textfield__error">Número inválido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
 												<label class="mdl-textfield__label" for="NameAdmin">Nombres</label>
-												<span class="mdl-textfield__error">Invalid name</span>
+												<span class="mdl-textfield__error">Nombres inválidos</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
 												<label class="mdl-textfield__label" for="LastNameAdmin">Apellidos</label>
-												<span class="mdl-textfield__error">Invalid last name</span>
+												<span class="mdl-textfield__error">Apellidos inválidos</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneAdmin">
 												<label class="mdl-textfield__label" for="phoneAdmin">Teléfono</label>
-												<span class="mdl-textfield__error">Invalid phone number</span>
+												<span class="mdl-textfield__error">Número de teléfono inválido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="email" id="emailAdmin">
 												<label class="mdl-textfield__label" for="emailAdmin">Email</label>
-												<span class="mdl-textfield__error">Invalid E-mail</span>
+												<span class="mdl-textfield__error">Email inválido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" id="addressAdmin">
 												<label class="mdl-textfield__label" for="addressAdmin">Dirección</label>
-												<span class="mdl-textfield__error">Invalid address</span>
+												<span class="mdl-textfield__error">Dirección inválida</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
@@ -70,35 +70,35 @@
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
 												<label class="mdl-textfield__label" for="UserNameAdmin">Nombre de usuario</label>
-												<span class="mdl-textfield__error">Invalid user name</span>
+												<span class="mdl-textfield__error">Nombre de usuario inválido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="password" id="passwordAdmin">
 												<label class="mdl-textfield__label" for="passwordAdmin">Contraseña</label>
-												<span class="mdl-textfield__error">Invalid password</span>
+												<span class="mdl-textfield__error">Contraseña inválida</span>
 											</div>
 											<h5 class="text-condensedLight">Escoger Avatar</h5>
 											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
 												<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="avatar-male.png">
-												<img src="assets/img/avatar-male.png" alt="avatar" style="height: 45px; width:45px;">
+												<img src="@/assets/img/avatar-male.png" alt="avatar" style="height: 45px; width:45px;">
 												<span class="mdl-radio__label">Avatar 1</span>
 											</label>
 											<br><br>
 											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
 												<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="avatar-female.png">
-												<img src="assets/img/avatar-female.png" alt="avatar" style="height: 45px; width:45px;">
+												<img src="@/assets/img/avatar-female.png" alt="avatar" style="height: 45px; width:45px;">
 												<span class="mdl-radio__label">Avatar 2</span>
 											</label>
 											<br><br>
 											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
 												<input type="radio" id="option-3" class="mdl-radio__button" name="options" value="avatar-male2.png">
-												<img src="assets/img/avatar-male2.png" alt="avatar" style="height: 45px; width:45px;">
+												<img src="@/assets/img/avatar-male2.png" alt="avatar" style="height: 45px; width:45px;">
 												<span class="mdl-radio__label">Avatar 3</span>
 											</label>
 											<br><br>
 											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
 												<input type="radio" id="option-4" class="mdl-radio__button" name="options" value="avatar-female2.png">
-												<img src="assets/img/avatar-female2.png" alt="avatar" style="height: 45px; width:45px;">
+												<img src="@/assets/img/avatar-female2.png" alt="avatar" style="height: 45px; width:45px;">
 												<span class="mdl-radio__label">Avatar 4</span>
 											</label>
 										</div>
@@ -107,7 +107,7 @@
 										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addAdmin">Add Administrator</div>
+										<div class="mdl-tooltip" for="btn-addAdmin">Agregar Administrador</div>
 									<!-- </p> -->
 								</form>
 							</div>
@@ -130,32 +130,32 @@
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNISeller">
 												<label class="mdl-textfield__label" for="DNISeller">Identificación</label>
-												<span class="mdl-textfield__error">Invalid number</span>
+												<span class="mdl-textfield__error">Número inválido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameSeller">
 												<label class="mdl-textfield__label" for="NameSeller">Nombres</label>
-												<span class="mdl-textfield__error">Invalid name</span>
+												<span class="mdl-textfield__error">Nombres inválidos</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameSeller">
 												<label class="mdl-textfield__label" for="LastNameSeller">Apellidos</label>
-												<span class="mdl-textfield__error">Invalid last name</span>
+												<span class="mdl-textfield__error">Apellidos inválidos</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneSeller">
 												<label class="mdl-textfield__label" for="phoneSeller">Teléfono</label>
-												<span class="mdl-textfield__error">Invalid phone number</span>
+												<span class="mdl-textfield__error">Número de teléfono inválido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="email" id="emailSeller">
 												<label class="mdl-textfield__label" for="emailSeller">Email</label>
-												<span class="mdl-textfield__error">Invalid E-mail</span>
+												<span class="mdl-textfield__error">Email inválido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" id="addressSeller">
 												<label class="mdl-textfield__label" for="addressSeller">Dirección</label>
-												<span class="mdl-textfield__error">Invalid address</span>
+												<span class="mdl-textfield__error">Dirección inválida</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
@@ -163,35 +163,35 @@
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameSeller">
 												<label class="mdl-textfield__label" for="UserNameSeller">Nombre de usuario</label>
-												<span class="mdl-textfield__error">Invalid user name</span>
+												<span class="mdl-textfield__error">Nombre de usuario inválido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="password" id="passwordSeller">
 												<label class="mdl-textfield__label" for="passwordSeller">Contraseña</label>
-												<span class="mdl-textfield__error">Invalid password</span>
+												<span class="mdl-textfield__error">Contraseña inválida</span>
 											</div>
 											<h5 class="text-condensedLight">Escoger Avatar</h5>
 											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
 												<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="avatar-male.png">
-												<img src="assets/img/avatar-male.png" alt="avatar" style="height: 45px; width:45px;">
+												<img src="@/assets/img/avatar-male.png" alt="avatar" style="height: 45px; width:45px;">
 												<span class="mdl-radio__label">Avatar 1</span>
 											</label>
 											<br><br>
 											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
 												<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="avatar-female.png">
-												<img src="assets/img/avatar-female.png" alt="avatar" style="height: 45px; width:45px;">
+												<img src="@/assets/img/avatar-female.png" alt="avatar" style="height: 45px; width:45px;">
 												<span class="mdl-radio__label">Avatar 2</span>
 											</label>
 											<br><br>
 											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
 												<input type="radio" id="option-3" class="mdl-radio__button" name="options" value="avatar-male2.png">
-												<img src="assets/img/avatar-male2.png" alt="avatar" style="height: 45px; width:45px;">
+												<img src="@/assets/img/avatar-male2.png" alt="avatar" style="height: 45px; width:45px;">
 												<span class="mdl-radio__label">Avatar 3</span>
 											</label>
 											<br><br>
 											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
 												<input type="radio" id="option-4" class="mdl-radio__button" name="options" value="avatar-female2.png">
-												<img src="assets/img/avatar-female2.png" alt="avatar" style="height: 45px; width:45px;">
+												<img src="@/assets/img/avatar-female2.png" alt="avatar" style="height: 45px; width:45px;">
 												<span class="mdl-radio__label">Avatar 4</span>
 											</label>
 										</div>
@@ -200,7 +200,7 @@
 										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addAdmin">Add Administrator</div>
+										<div class="mdl-tooltip" for="btn-addAdmin">Agregar Empleado</div>
 									<!-- </p> -->
 								</form>
 							</div>

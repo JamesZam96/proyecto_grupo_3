@@ -1,5 +1,5 @@
 <template>
-    <div id="fondo">
+    <div class="fondo">
         <section class="cover">
 	<div class="container-login">
 		<p class="text-center" style="font-size: 80px;">
@@ -40,8 +40,6 @@ export default {
     },
     methods:{
         login(){
-            // localStorage.setItem('user', this.user);
-            // this.$router.push('/home')
             let formData = new URLSearchParams
             formData.append('email', this.form.email)
             formData.append('password', this.form.password)

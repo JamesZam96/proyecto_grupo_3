@@ -8,8 +8,8 @@ import Home from '@/views/Home'
 import RegisterClient from '@/views/RegisterClient'
 import RegisterProduct from '@/views/RegisterProduct'
 import RegisterProvider from '@/views/RegisterProvider'
-
-import getPrueba from '@/views/getPrueba'
+import Categories from '@/views/Categories'
+import Inventory from '@/views/Inventory'
 
 Vue.use(Router);
 
@@ -79,9 +79,17 @@ const router = new Router({
             }
         },
         {
-            path: '/getprueba',
-            name: 'GetPrueba',
-            component: getPrueba,
+            path: '/categories',
+            name: 'Categories',
+            component: Categories,
+            meta:{
+                requiresAuth: true
+            }
+        },
+        {
+            path: '/inventory',
+            name: 'Inventory',
+            component: Inventory,
             meta:{
                 requiresAuth: true
             }

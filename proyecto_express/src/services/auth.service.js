@@ -11,6 +11,7 @@ const authService = {
     },
     login: async function(data){
         try {
+            
             const {email, password} = data;
             // let pass = aes.encrypt(password);
             let userExists = await User.findOne({email: email}, 'storeName names lastNames email phone password').exec()
